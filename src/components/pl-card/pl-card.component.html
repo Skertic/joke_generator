@@ -1,0 +1,11 @@
+<div class="pl-card">
+    <div class="pl-card-header" *ngIf="plCardHeader">
+        <ng-container *ngTemplateOutlet="plCardHeader"></ng-container>
+    </div>
+    <div class="pl-card-container" *ngIf="plCardContainer">
+        <ng-container *ngTemplateOutlet="plCardContainer"></ng-container>
+    </div>
+    <div class="pl-card-footer" *ngIf="plCardFooter">
+        <ng-container *ngTemplateOutlet="plCardFooter"></ng-container>
+    </div>
+</div>

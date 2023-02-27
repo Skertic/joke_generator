@@ -1,0 +1,31 @@
+<div style="display: flex;justify-content: center;">
+    <div style="max-width: 800px;">
+        <ng-container *ngIf="!isRequesting; else loading">
+            <app-pl-card *ngIf="joke">
+                <ng-template #plCardHeader>{{'Joke type: ' + (joke.type).toUpperCase()}}</ng-template>
+                <ng-template #plCardContainer>
+                    <div style="display: flex;flex-direction: column;">
+                        <p>{{joke.setup}}</p>
+                        <p>{{joke.punchline}}</p>
+                    </div>
+                </ng-template>
+                <ng-template #plCardFooter>
+                    <div style="display: flex;flex-direction: row;justify-content: flex-end;width: 100%;">
+                        <button (click)="onClickNewJoke()" class="pl-btn-primary">New Joke</button>
+                    </div>
+                </ng-template>
+            </app-pl-card>
+        </ng-container>
+    </div>
+</div>
+
+
+<ng-template #loading>
+    <app-pl-card>
+        <ng-template #plCardContainer>
+            <div style="display: flex;justify-content: center;width: 100%;">
+                <app-spinner></app-spinner>
+            </div>
+        </ng-template>
+    </app-pl-card>
+</ng-template>

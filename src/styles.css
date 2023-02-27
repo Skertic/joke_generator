@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    color: #020309;
+}
+
+.pl-btn-primary {
+    min-height: 32px;
+    color:white;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #1172ab;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+}
