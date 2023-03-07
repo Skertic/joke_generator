@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { JokeModel } from 'src/models';
 import { JokesService } from 'src/services/jokes.service';
 
@@ -23,7 +23,9 @@ export class JokesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.getJokeSubscription.unsubscribe(); // prevent memory leaks
+    if (this.getJokeSubscription) {
+      this.getJokeSubscription.unsubscribe(); // prevent memory leaks
+    }
   }
 
   private getJoke(): void {
